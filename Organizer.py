@@ -60,14 +60,22 @@ class Organizer:
         for dir in self._dirsToOrganize:
             os.chdir(dir)
             files = [file for file in os.listdir() if os.path.isfile(file)]
-            ext = []
+            ext = set()
             for file in files:
                 token = file.split('.')
                 if len(token) == 2:
-                    ext.append(token[1])
-                    os.mkdir(ext[1:])
-            for file in files:
-                pass                
+                    ext.add(token[1])
+            for subdir in ext:
+                try:
+                    os.mkdir(subdir)
+                except:
+                    continue
+
+            for extdir in ext:
+                pattern = ".{}$".format(extdir)
+                for file in files:
+                    if re.search(pattern, file) != None:
+                        os.replace(os.path.join(dir, file), os.path.join(dir, os.path.join(extdir, file)))
 
     # *********************** The parsser of the Searching task *********************** 
     def ParsSearching(self, tokens):

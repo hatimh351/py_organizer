@@ -1,3 +1,0 @@
-S:  ex00 /Users/hlahwaou/Desktop/cpp
-S:  ex01 /Users/hlahwaou/Desktop/cpp/cpp02
-O: /Users/hlahwaou/Desktop/cpp/cpp02/ex00

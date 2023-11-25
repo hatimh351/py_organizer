@@ -7,4 +7,4 @@ if '__main__' == __name__:
         print("Config file wasn't provided")
         exit(1)
     obj = Organizer(sys.argv[-1])
-    obj.organizer()
+    obj.monitoring()

@@ -184,7 +184,6 @@ class Organizer:
     # *********************** The Searching task *********************** 
     
     def searching(self):
-        print("Searching !!\n" * 4, end="")
         # here we are searching
         find = False
         for root, dirs, files in os.walk(self._searchingStart):
